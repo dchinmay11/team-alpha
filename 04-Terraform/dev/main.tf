@@ -1,5 +1,5 @@
 #### Module for provisioning Cusotm VPC with 2 Subnets
-
+/*
 module "vpc" {
   source          = "../modules/vpc"
   project_id      = "chaseio-dev"
@@ -7,7 +7,7 @@ module "vpc" {
   subnet_name_01  = "subnet01"
   subnet_name_02  = "subnet02"
 }
-
+*/
 
 #### Module for provisioning GKE Standard CLuster based on Cloud Fabric
 
@@ -25,7 +25,7 @@ module "vpc" {
 # }
 
 
-
+/*
 module "cluster-1" {
   source     = "../modules/gke-cluster-standard"
   project_id = "chaseio-dev"
@@ -55,9 +55,9 @@ module "cluster-1" {
     module.vpc
   ]
 }
-
+*/
 ####  Node Pool Configuration module
-
+/*
 module "cluster-1-nodepool-1" {
   source       = "../modules/gke-nodepool"
   project_id   = "chaseio-dev"
@@ -92,3 +92,23 @@ module "cluster-1-nodepool-1" {
     module.cluster-1
   ]
 }
+*/
+
+
+output "url" {
+        value       = google_storage_bucket.example.self_link
+      }
+
+      resource "random_id" "example" {
+        byte_length = 4
+      }
+
+      // The google provider and remote state are configured by the provider
+      // config - see providerconfig.yaml.
+      resource "google_storage_bucket" "example" {
+        name = "crossplane-example-remote"
+        location      = "US"
+        force_destroy = true
+
+        public_access_prevention = "enforced"
+      }

@@ -149,8 +149,6 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: kubectl get pods -A
 
-#testing patch
-
 
   patch-argo:
     name: patch-argo

@@ -1,4 +1,4 @@
-variable "network_name" {
+/*variable "network_name" {
     default = "chase-network"
     type    = string
 }
@@ -19,8 +19,10 @@ variable "project_id" {
   type        = string
   default     = "chaseio-dev"
 }
+*/
 
 variable "remote_state_bucket" {
   description = "remote state bucket name"
   type        = string
 }
+

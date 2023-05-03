@@ -11,7 +11,7 @@ module "vpc" {
 
 #### Module for provisioning GKE Standard CLuster based on Cloud Fabric
 
-
+/*
 # locals {
 #   chase_network = data.terraform_remote_state.dev.outputs.network_name
 # }
@@ -23,7 +23,7 @@ module "vpc" {
 #     prefix = "terraform/dev/"
 #   }
 # }
-
+*/
 
 /*
 module "cluster-1" {
